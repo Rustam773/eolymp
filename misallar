@@ -1,0 +1,265 @@
+9.
+N = int(input())
+
+if(N == 1):
+    print(10, 0)
+elif(N == 2):
+    print(1, 22)
+elif(N == 3):
+    print(6, 123)
+elif(N == 4):
+    print(12, 1124)
+elif(N == 5):
+    print(40, 11125)
+elif(N == 6):
+    print(30, 111126)
+elif(N == 7):
+    print(84, 1111127)
+elif(N == 8):
+    print(224, 11111128)
+elif(N == 9):
+    print(144, 111111129)
+
+10.
+vedre = 0
+gun = 0
+say = int(input())
+i = say
+
+while(vedre <= 0.5):
+    vedre = vedre + 1/i
+    gun += 1
+    i = i - 1
+
+print(say - gun + 1)
+
+119.
+eded = 2
+a = input()
+b = ""
+for n in range(1, 1001):
+    eded = 2 ** n
+    b += str(eded)
+    if(a == b):
+        print(n)
+        break
+
+138.
+a=[500,200,100,50,20,10]
+n=int(input())
+s=0
+i=0
+while n>=10:
+    s=s+n//a[i]
+    n=n%a[i]
+    i=i+1
+if n!=0:
+    print(-1)
+else:
+    print(s)
+
+446.
+n = int(input())
+m = 0
+while(1 <= n <= 10**6):
+    for i in range(1, n + 1):
+        if (n % i == n // i):
+            m = m + 1
+    print(m)
+    break
+
+922.
+n=int(input())
+ededler=[int(i) for i in input().split()]
+ededler.insert(0,ededler[n-1])
+ededler.pop(-1)
+print(*ededler[0:])
+
+992.
+n = int(input())
+
+G=[]
+
+for i in range(n):
+ temp =[int(g) for g in input().split()]
+ G.append(temp);
+cem = 0 
+for g in G:
+ cem += sum(g)
+print(cem//2)
+
+993.
+n,m=input().split()
+n=int(n)
+m=int(m)
+lt=[]
+for y in range(m):
+    a,b=input().split()
+    a=int(a)
+    b=int(b)
+    lt.append(a)
+    lt.append(b)
+for s in range(1,n+1):
+    print(lt.count(s),end =  " ")
+
+994.
+n = int(input())
+G = [[int(i) for i in input().split()]for j in range(n)]
+saygac = 0 
+input()
+R =[int (r) for r in input().split()]
+for i in range(n):
+    for j in range(i, n):
+        if G[i][j]==1:
+            if R[i]!=R[j]:
+                saygac = saygac + 1
+print(saygac)
+
+1288.
+n,a,b=map(int,input().split())
+if a==0 and b==0:
+   print(0)
+else:
+   if  a==0 or b==0 or a==b:
+        print(1,end="")
+   else:
+        print(2,end="")
+
+   for i in range(n-1):
+        print(0,end="")
+
+1290.
+l=input().split()
+b=int(l[0])
+a=int(l[1])
+
+print(pow(26,b)*pow(10,a))
+
+1704.
+n,m=map(int,input().split())
+a=[[1 for i in range(m)]for j in range(n)]
+for i in range(1,n):
+    for j in range(1,m):
+        a[i][j]=a[i-1][j]+a[i][j-1]
+print(a[n-1][m-1])
+
+2166.
+s1=input()
+s2=input()
+
+s2list=[]
+b=True
+
+for i in s2:
+    s2list.append(i)
+    
+for i in s1:
+    if i in s2list:
+        s2list.remove(i)
+    else:
+        b=False
+        
+if b==True:
+    print("YES")
+elif b==False:
+    print("NO")
+
+3189.
+n=int(input())
+a=[[int(i) for i in input().split()] for j in range(n)]
+for i in range(1,n):
+    a[i][0]+=a[i-1][0]
+    a[i][-1]+=a[i-1][-1]
+    for j in range(1,i):
+        a[i][j]+=max(a[i-1][j],a[i-1][j-1])
+print(max(a[-1]))
+
+4760.
+n = input()
+nonzero = []
+zeroes = []
+ededler = [int(j) for j in input().split()]
+for i in ededler:
+    if(i != 0):
+        nonzero.append(i)
+    if(i == 0):
+        zeroes.append(i)
+print(*(nonzero + zeroes), end="")
+
+5072.
+n=int(input())
+A=[[int(i) for i in input().split()]for j in range(n)]
+S=0
+for i in range(n):
+    S+=sum(A[i])
+print(S)
+
+5074.
+n, m = map(int,input().split())
+T = [0 for i in range(n)]
+for i in range(m):
+    x, y = map(int,input().split())
+    T[x-1]+=1
+    T[y-1]+=1
+for i in T:
+    print(i)
+
+5076.
+MAX=110
+n, m = map(int, input().split())
+T=[0 for i in range(MAX)]
+
+for i in range(m):
+    a,b = map(int, input().split())
+    T[a]+=1
+    T[b]+=1
+
+flag=0
+for i in range(1, n):
+    if T[i]!=T[i+1]:
+        flag=1
+if (flag==0):
+    print('YES')
+else:
+    print('NO')
+
+5765.
+n,k=map(int,input().split())
+
+f=n//k
+s=n%k
+
+if s!=0:
+    min=f+1
+    max=n-(k-1)
+else:
+    min=f
+    max=n-(k-1)
+
+print(min,max)
+
+8946.
+n=int(input())
+sablon=[[0 for i in range(n)] for j in range(n)]
+
+for i in range(n):
+    for j in range(n):
+        if (i+j)%2==0:
+            print("*", end="")
+        else:
+            print(end=" ")
+    print()
+
+9606.
+def powmod(x,n,m):
+    if n == 0:
+        return 1
+    if n % 2 == 0:
+        return powmod((x*x)%m,n//2,m)
+    return (x*powmod(x,n-1,m))%m
+
+a,b,n=map(int,input().split())
+y=powmod(b,n-2,n)
+x=(a*y)%n 
+print(x)
+
