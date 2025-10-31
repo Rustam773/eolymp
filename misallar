@@ -32,6 +32,17 @@ while(vedre <= 0.5):
     i = i - 1
 
 print(say - gun + 1)
+28.
+P = int(input())
+for a in range(2, 10001):
+    hasil = 1
+    for b in range(a, 10001):
+        hasil *= b
+        if hasil == P:
+            print(a, b)
+            exit()
+        if hasil > P:
+            break 
 
 119.
 eded = 2
@@ -43,6 +54,24 @@ for n in range(1, 1001):
     if(a == b):
         print(n)
         break
+135.
+n = int(input())
+numbers = list(map(int, input().split()))
+
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+result = numbers[0]
+for num in numbers[1:]:
+    result = lcm(result, num)
+
+print(result)
+
 
 138.
 a=[500,200,100,50,20,10]
@@ -203,6 +232,22 @@ for i in ededler:
     if(i == 0):
         zeroes.append(i)
 print(*(nonzero + zeroes), end="")
+4831.
+s = int(input())
+weights = list(map(int, input().split()))
+
+dp = [False] * (s + 1)
+dp[0] = True
+
+for w in weights:
+    for i in range(s, w - 1, -1):  
+        if dp[i - w]:
+            dp[i] = True
+
+for i in range(s, -1, -1):
+    if dp[i]:
+        print(i)
+        break 
 
 5072.
 n=int(input())
@@ -255,6 +300,14 @@ else:
     max=n-(k-1)
 
 print(min,max)
+8522.
+a,b=map(int,input().split())
+x=a//b
+y=a%b
+if a%b==0:
+    print("Divisible")
+else:
+    print(x, y)
 
 8946.
 n=int(input())
@@ -267,6 +320,22 @@ for i in range(n):
         else:
             print(end=" ")
     print()
+
+8874.
+n=int(input())
+if 10<=n<=99 or -99<=n<=-10:
+    print("Ok")
+else:
+    print("No")
+8987.
+n=input()
+k=list(n)
+for i in range(0,len(k)):
+    if k[i]=="a":
+        k[i]="b"
+    elif k[i]=="b":
+        k[i]="a"
+print("".join(k))
 
 9606.
 def powmod(x,n,m):
